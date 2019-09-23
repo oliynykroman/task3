@@ -1,0 +1,18 @@
+{
+    "quiz": [
+        {
+            "id": 1,
+            "title": "question 1",
+            "fields": [
+                {
+                    "type": "text",
+                    "value": " ",
+                    "placeholder": "type here",
+                    "label": "enter response in field bellow",
+                    "params": true,
+                    "required": true
+                }
+            ]
+        }
+    ]
+}
