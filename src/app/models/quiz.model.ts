@@ -1,7 +1,9 @@
-import { QuizItem } from "./quiz-item.model";
 
-export class Quiz {
-    'id': number;
-    'title': string;
-    'fields'?: QuizItem[];
+export class Quiz<T> {
+    value: T;
+    key: string;
+    label: string;
+    required: boolean;
+    order: number;
+    controlType: string
 }

@@ -12,6 +12,6 @@ export class QuizService {
   constructor(private http: HttpClient) { }
 
   public getTodoList() {
-    return this.http.get<Quiz[]>(`${api}/quiz`);
+    // return this.http.get<Quiz[]>(`${api}/quiz`);
   }
 }
