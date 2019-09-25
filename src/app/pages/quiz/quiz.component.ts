@@ -1,34 +1,18 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { QuizService } from '../../../services/quiz.service';
-import { Quiz } from '../../models/quiz.model';
-import { Subscription } from 'rxjs';
-import { FormGroup } from '@angular/forms';
-import { QuizTransformService } from '../../../services/quiz-transform.service';
+import { QuizService } from '../../../services/quiz.service'
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.scss']
 })
-export class QuizComponent implements OnInit, OnDestroy {
+export class QuizComponent implements OnInit {
 
-  @Input() questions: Quiz<any>[] = [];
-  form: FormGroup;
-  payLoad = '';
-
-  private subscription: Subscription;
-
-  constructor(private quizService: QuizTransformService) { }
-
+  public questions: any[];
+  constructor(private quizService: QuizService) {
+  }
   ngOnInit() {
-    this.form = this.quizService.toFormGroup(this.questions);
-  }
+    this.questions = this.quizService.getQuestions();
+   }
 
-  onSubmit() {
-    this.payLoad = JSON.stringify(this.form.value);
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
 }

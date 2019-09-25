@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { QuizRoutingModule } from './quiz-routing.module';
 import { QuizComponent } from './quiz.component';
-import { QuizItemComponent } from './components/quiz-item/quiz-item.component';
-
-
+import { QuizElementComponent } from './components/quiz-element/quiz-element.component';
+import { QuizFormComponent } from './components/quiz-form/quiz-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [QuizComponent, QuizItemComponent],
+  declarations: [QuizComponent, QuizFormComponent, QuizElementComponent,],
   imports: [
     CommonModule,
-    QuizRoutingModule
+    QuizRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class QuizModule { }

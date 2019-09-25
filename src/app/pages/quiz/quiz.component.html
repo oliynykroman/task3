@@ -1,14 +1,2 @@
 <p>quiz works!</p>
-<div>
-    <form (ngSubmit)="onSubmit()" [formGroup]="form">
-
-        <div *ngFor="let question of questions" class="form-row">
-            <app-quiz-item [question]="question" [form]="form"></app-quiz-item>
-        </div>
-
-        <div class="form-row">
-            <button type="submit" [disabled]="!form.valid">Save</button>
-        </div>
-    </form>
-
-</div>
+<app-quiz-form [questions]="questions"></app-quiz-form>

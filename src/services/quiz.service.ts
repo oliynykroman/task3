@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { Quiz } from '../app/models/quiz.model';
+import { QuizInput } from '../app/models/quiz-input.model';
 
 const api = environment.apiDomain
 @Injectable({
@@ -15,19 +16,19 @@ export class QuizService {
 
     let questions: Quiz<any>[] = [
 
-      new DropdownQuestion({
-        key: 'brave',
-        label: 'Bravery Rating',
-        options: [
-          {key: 'solid',  value: 'Solid'},
-          {key: 'great',  value: 'Great'},
-          {key: 'good',   value: 'Good'},
-          {key: 'unproven', value: 'Unproven'}
-        ],
-        order: 3
-      }),
+      // new DropdownQuestion({
+      //   key: 'brave',
+      //   label: 'Bravery Rating',
+      //   options: [
+      //     {key: 'solid',  value: 'Solid'},
+      //     {key: 'great',  value: 'Great'},
+      //     {key: 'good',   value: 'Good'},
+      //     {key: 'unproven', value: 'Unproven'}
+      //   ],
+      //   order: 3
+      // }),
 
-      new TextboxQuestion({
+      new QuizInput({
         key: 'firstName',
         label: 'First name',
         value: 'Bombasto',
@@ -35,7 +36,7 @@ export class QuizService {
         order: 1
       }),
 
-      new TextboxQuestion({
+      new QuizInput({
         key: 'emailAddress',
         label: 'Email',
         type: 'email',
