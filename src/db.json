@@ -1,18 +1,74 @@
 {
-    "quiz": [
+    "questions": [
         {
             "id": 1,
             "title": "question 1",
-            "fields": [
+            "left": [
                 {
-                    "type": "text",
-                    "value": " ",
-                    "placeholder": "type here",
-                    "label": "enter response in field bellow",
-                    "params": true,
-                    "required": true
+                    "content": "<p>some content</p>",
+                }
+            ],
+            "right": [
+                {
+                    "fields": [
+                        {
+                            "type": "input",
+                            "value": " ",
+                            "placeholder": "type here",
+                            "label": "enter response in field bellow",
+                            "params": true,
+                            "required": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "question 2",
+            "left": [
+                {
+                    "content": "<p>some content</p>",
+                }
+            ],
+            "right": [
+                {
+                    "fields": [
+                        {
+                            "type": "input",
+                            "value": " ",
+                            "placeholder": "type here",
+                            "label": "enter response in field bellow",
+                            "params": true,
+                            "required": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "question 3",
+            "left": [
+                {
+                    "content": "<p>some content</p>",
+                }
+            ],
+            "right": [
+                {
+                    "fields": [
+                        {
+                            "type": "input",
+                            "value": " ",
+                            "placeholder": "type here",
+                            "label": "enter response in field bellow",
+                            "params": true,
+                            "required": true
+                        }
+                    ]
                 }
             ]
         }
+
     ]
 }
