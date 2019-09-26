@@ -15,7 +15,7 @@
         <label [for]="radioItem.value">
           {{radioItem.label}}
         </label>
-        <input [formControlName]="question.key" [id]="radioItem.value" [type]="question.controlType"
+        <input [formControlName]="question.key" [name]="question.key" [id]="radioItem.value" [type]="question.controlType"
           [value]="radioItem.value">
 
       </div>
