@@ -1,11 +1,12 @@
-<p>quiz-form works!</p>
 <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    {{questions | json}}
+  <div *ngFor="let question of questions" class="form-questions">
+    <app-quiz-element [question]="question" [form]="form"></app-quiz-element>
+   
+  </div>
 
-    <div *ngFor="let question of questions" class="form-row">
-      <app-quiz-element [question]="question" [form]="form"></app-quiz-element>
-    </div>
-
-    <div class="form-row">
-      <button type="submit" [disabled]="!form.valid">Save</button>
-    </div>
-  </form>
+  <div class="form">
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+    <button (click)="nextQuiz()">Next</button>
+  </div>
+</form>
