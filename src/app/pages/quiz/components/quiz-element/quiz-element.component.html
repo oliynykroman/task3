@@ -5,15 +5,15 @@
   </div>
   <div [ngClass]="question.quizPosition === 'left' ? 'left' : 'right'">
     <div *ngFor='let opt of question.quizList'>
-        <div class="controltype" [ngSwitch]="opt.controlType">
-            <div class="radio-container" *ngSwitchCase="'radio'">
-              <label *ngFor="let radioItem of opt.options">
-                <span class="label-caption"> {{radioItem.label}}</span>
-                <input [formControlName]="tewst" [name]="opt.key" [id]="radioItem.value" [type]="opt.controlType"
-                  [value]="radioItem.value">
-              </label>
-            </div>
-          </div>
+      <div class="controltype" [ngSwitch]="opt.controlType">
+        <div class="radio-container" *ngSwitchCase="'radio'">
+          <label *ngFor="let radioItem of opt.options">
+            <span class="label-caption"> {{radioItem.label}}</span>
+            <input [formControlName]="opt.key" [name]="opt.key" [id]="radioItem.value" [type]="opt.controlType"
+              [value]="radioItem.value">
+          </label>
+        </div>
+      </div>
     </div>
   </div>
 </div>

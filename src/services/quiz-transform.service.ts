@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Quiz } from '../app/models/quiz.model';
 import { QuizStructure } from 'src/app/models/quiz-structure.model';
 
 

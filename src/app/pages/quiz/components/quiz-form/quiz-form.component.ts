@@ -22,6 +22,7 @@ export class QuizFormComponent implements OnInit {
 
   onSubmit() {
     this.payLoad = JSON.stringify(this.form.value);
+    console.log(this.payLoad);
   }
 
 }
