@@ -1,0 +1,19 @@
+.bar {
+    display: flex;
+    flex-direction: row;
+
+    .question {
+        height: 30px;
+        text-align: center;
+        background-color: gray;
+        color: #ffffff;
+
+        &.correct {
+            background-color: green
+        }
+
+        &.not_correct {
+            background-color: darkred;
+        }
+    }
+}

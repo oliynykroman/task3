@@ -1,15 +1,22 @@
-import { LeftSide } from "./left-side.model";
-import { RightSide } from "./right-side.model";
+import { Quiz } from "./quiz.model";
 
 export class QuizStructure {
     id: number;
     questionTitle: string;
-    left: LeftSide;
-    right: RightSide;
-    constructor(id: number, questionTitle: string, left: LeftSide, right: RightSide) {
-        this.id = id;
-        this.questionTitle = questionTitle;
-        this.left = left;
-        this.right = right;
-    }
+    quizPosition: string;
+    quizDescription: string;
+    quizList: Quiz<any>[];
+    constructor(options: {
+        id?: number,
+        questionTitle?: string,
+        quizPosition?: string,
+        quizDescription?: string,
+        quizList?: Quiz<any>[]
+    } = {}) {
+        this.id = options.id || -1;
+        this.questionTitle = options.questionTitle || '';
+        this.quizPosition = options.quizPosition || '';
+        this.quizDescription = options.quizDescription || '';
+        this.quizList = options.quizList || [];
+    };
 }

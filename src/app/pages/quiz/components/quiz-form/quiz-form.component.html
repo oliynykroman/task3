@@ -1,8 +1,6 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    {{questions | json}}
   <div *ngFor="let question of questions" class="form-questions">
     <app-quiz-element [question]="question" [form]="form"></app-quiz-element>
-   
   </div>
 
   <div class="form">

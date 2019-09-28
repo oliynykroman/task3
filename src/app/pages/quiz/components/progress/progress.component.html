@@ -1,1 +1,7 @@
-<p>progress works!</p>
+<div class="bar" *ngIf='questionStatus'>
+    progress
+    <div class="question" *ngFor="let item of questionStatus; let i = index;"
+        [ngClass]="{'correct': questionStatus, 'not-correct':!questionStatus}">
+        {{i}}
+    </div>
+</div>

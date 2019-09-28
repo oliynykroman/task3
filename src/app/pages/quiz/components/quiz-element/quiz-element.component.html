@@ -1,20 +1,45 @@
+<h2>{{question.questionTitle}}</h2>
 <div class="formgroup" [formGroup]="form">
-  <div class="controltype" [ngSwitch]="question.controlType">
-    <label class="form-contoll--label" *ngSwitchCase="'textbox'">
-      <span class="label-caption"></span>
-      <input [formControlName]="question.key" [id]="question.key" [type]="question.type">
-
-    </label>
-    <div *ngSwitchCase="'radio'">
-      <label [for]="radioItem.value" *ngFor="let radioItem of question.options">
-        <span class="label-caption"> {{radioItem.label}}</span>
-        <input [formControlName]="question.key" [name]="question.key" [id]="radioItem.value"
-          [type]="question.controlType" [value]="radioItem.value">
-        <div class="description"></div>
-      </label>
+  <div [ngClass]="question.quizPosition !== 'left' ? 'left' : 'right'">
+    <div class="description" [innerHtml]="question.quizDescription"></div>
+  </div>
+  <div [ngClass]="question.quizPosition === 'left' ? 'left' : 'right'">
+    <div *ngFor='let opt of question.quizList'>
+        <div class="controltype" [ngSwitch]="opt.controlType">
+            <div class="radio-container" *ngSwitchCase="'radio'">
+              <label *ngFor="let radioItem of opt.options">
+                <span class="label-caption"> {{radioItem.label}}</span>
+                <input [formControlName]="tewst" [name]="opt.key" [id]="radioItem.value" [type]="opt.controlType"
+                  [value]="radioItem.value">
+              </label>
+            </div>
+          </div>
     </div>
   </div>
 </div>
+<!-- <div class='right'>
+    <div *ngIf="question.right.description">
+      <div class="description" [innerHtml]="question.right.description"></div>
+    </div>
+    <div *ngIf="question.right.quizList">
+     {{ question.right.quizList | json}} 
+ <div *ngFor='let opt of question.right.quizList'>
+          {{opt.key | json}}
+       <div class="controltype" [ngSwitch]="opt.controlType"> 
+          {{opt.key | json}}
+        <div  class="radio-container" *ngSwitchCase="'radio'">
+            {{opt.key | json}}
+          <label *ngFor="let radioItem of opt.options">
+              {{opt.key | json}}
+              {{radioItem | json}}
+            <span class="label-caption"> {{radioItem.label}}</span>
+            <input [formControlName]="opt.key" [name]="opt.key" [id]="radioItem.value"
+              [type]="opt.controlType" [value]="radioItem.value">     
+          </label>
+    
+        </div> 
+      </div> -->
+
 
 
 <!-- <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
@@ -22,3 +47,9 @@
     </select> -->
 
 <!-- <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div> -->
+
+<!-- <label class="form-contoll--label" *ngSwitchCase="'textbox'">
+      <span class="label-caption"></span>
+      <input [formControlName]="question.key" [id]="question.key" [type]="question.type">
+
+    </label> -->
