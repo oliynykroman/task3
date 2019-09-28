@@ -13,10 +13,18 @@
               [value]="radioItem.value">
           </label>
         </div>
+        <div class="input-container" *ngSwitchCase="'textbox'">
+          <label class="form-contoll--label" *ngSwitchCase="'textbox'">
+            <span class="label-caption"></span>
+            <input [formControlName]="opt.key" [id]="opt.key" [type]="opt.type">
+          </label>
+        </div>
       </div>
     </div>
   </div>
+  <!-- <div class="errorMessage" *ngIf="!isValid">is required</div> -->
 </div>
+
 <!-- <div class='right'>
     <div *ngIf="question.right.description">
       <div class="description" [innerHtml]="question.right.description"></div>
@@ -46,7 +54,7 @@
       <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
     </select> -->
 
-<!-- <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div> -->
+
 
 <!-- <label class="form-contoll--label" *ngSwitchCase="'textbox'">
       <span class="label-caption"></span>

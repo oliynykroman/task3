@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { Quiz } from '../app/models/quiz.model';
 import { QuizInput } from '../app/models/quiz-input.model';
-import { QuizDropDown } from '../app/models/quiz-drop-down.model';
 import { QuizRadio } from '../app/models/quiz-radio-group.mode';
 import { QuizStructure } from '../app/models/quiz-structure.model';
 
@@ -30,85 +28,36 @@ export class QuizService {
               { value: 'v1', label: 'якийсь торчок' },
               { value: 'v2', label: 'Monica Zelensky' },
               { value: 'v3', label: 'mr. President' },
+              { value: 'v4', label: 'Зеленський В.О.' },
+            ],
+          }),
+          new QuizRadio({
+            key: 'question2',
+            label: 'Може то:',
+            required: true,
+            options: [
+              { value: 'v1', label: 'якийсь торчок' },
+              { value: 'v2', label: 'Monica Zelensky' },
+              { value: 'v3', label: 'mr. President' },
               { value: 'v4', label: 'Найвеличніший (може)' },
             ],
-          })
+          }),
+          new QuizInput({
+            key: 'firstName',
+            label: 'First name',
+            value: '',
+            required: true
+          }),
         ]
-        // new QuizRadio({
-        //   key: 'question2',
-        //   label: 'Може то:',
-        //   options: [
-        //     { value: 'v1', label: 'якийсь торчок' },
-        //     { value: 'v2', label: 'Monica Zelensky' },
-        //     { value: 'v3', label: 'mr. President' },
-        //     { value: 'v4', label: 'Найвеличніший (може)' },
-        //   ],
-        // }),
-        // new QuizRadio({
-        //   key: 'question3',
-        //   label: 'Може то:',
-        //   options: [
-        //     { value: 'v1', label: 'якийсь торчок' },
-        //     { value: 'v2', label: 'Monica Zelensky' },
-        //     { value: 'v3', label: 'mr. President' },
-        //     { value: 'v4', label: 'Найвеличніший (може)' },
-        //   ],
-        // })
       }
     ]
 
-// {
-//   id: 2,
-//     questionTitle: 'second question',
-//       left: {
-//     description: '<p>cdcd</p>',
-//       quizList: [
-//         new QuizDropDown({
-//           key: 'brave',
-//           label: 'Bravery Rating',
-//           options: [
-//             { key: 'solid', value: 'Solid' },
-//             { key: 'great', value: 'Great' },
-//             { key: 'good', value: 'Good' },
-//             { key: 'unproven', value: 'Unproven' }
-//           ],
-//         }),
-//         new QuizInput({
-//           key: 'firstName',
-//           label: 'First name',
-//           value: 'Bombasto',
-//           required: true
-//         }),
-//       ]
-//   },
-//   right: {
-//     description: '<p>cdcd</p>',
-//       quizList: [
-//         new QuizDropDown({
-//           key: 'brave',
-//           label: 'Bravery Rating',
-//           options: [
-//             { key: 'solid', value: 'Solid' },
-//             { key: 'great', value: 'Great' },
-//             { key: 'good', value: 'Good' },
-//             { key: 'unproven', value: 'Unproven' }
-//           ],
-//         }),
-//         new QuizInput({
-//           key: 'firstName',
-//           label: 'First name',
-//           value: 'Bombasto',
-//           required: true
-//         }),
-//       ]
-//   }
-// }
-return questions;
+    return questions;
   }
-checkAnswer(index, status) {
+  checkAnswer(index, status) {
 
-}
-getProgress() {
+  }
+  getProgress() {
 
-}
+  }
 }
