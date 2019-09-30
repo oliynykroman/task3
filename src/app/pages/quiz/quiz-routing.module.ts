@@ -6,8 +6,12 @@ import { QuizComponent } from './quiz.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo:'quiz/0'
+  },
+  {
+    path: 'quiz/:id',
     component: QuizComponent
-  }
+  },
 ];
 
 @NgModule({

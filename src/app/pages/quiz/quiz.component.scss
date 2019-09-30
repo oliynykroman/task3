@@ -18,6 +18,10 @@
         color: lightslategrey;
         text-decoration: none;
         text-align: center;
+        &.active{
+            background-color:lightslategrey;
+            color: #ffffff
+        }
     }
 }
 
