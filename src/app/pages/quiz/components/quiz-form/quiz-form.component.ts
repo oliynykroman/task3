@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { QuizTransformService } from '../../../../../services/quiz-transform.service';
 import { FormGroup } from '@angular/forms';
-import { Quiz } from '../../../../models/quiz.model';
 import { QuizStructure } from '../../../../models/quiz-structure.model';
 
 @Component({
@@ -11,13 +10,14 @@ import { QuizStructure } from '../../../../models/quiz-structure.model';
 })
 export class QuizFormComponent implements OnInit {
 
-  @Input() questions: QuizStructure[] = [];
+  @Input() question: QuizStructure = new QuizStructure;
   form: FormGroup;
   payLoad = '';
-  constructor(private qcs: QuizTransformService) { }
+
+  constructor(private quizTransformService: QuizTransformService) { }
 
   ngOnInit() {
-    this.form = this.qcs.toFormGroup(this.questions);
+    this.form = this.quizTransformService.toFormGroup(this.question);
   }
 
   onSubmit() {

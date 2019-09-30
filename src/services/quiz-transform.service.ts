@@ -10,13 +10,10 @@ export class QuizTransformService {
 
   constructor() { }
 
-  toFormGroup(questions: QuizStructure[]) {
+  toFormGroup(question: QuizStructure) {
     let group: any = {};
-    questions.forEach(question => {
-      question.quizList.forEach(formItem =>{
-        group[formItem.key] = formItem.required ? new FormControl(formItem.value || '', Validators.required) : new FormControl(formItem.value || '');
-      })
-      
+    question.quizList.forEach(formItem => {
+      group[formItem.key] = formItem.required ? new FormControl(formItem.value || '', Validators.required) : new FormControl(formItem.value || '');
     });
     return new FormGroup(group);
   }

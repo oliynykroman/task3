@@ -1,7 +1,7 @@
 import { Quiz } from "./quiz.model";
 
-export class QuizRadio extends Quiz<string> {
-    controlType = 'radio';
+export class QuizCheckBox extends Quiz<string> {
+    controlType = 'checkbox';
     options: { value: string, label: string, content?: '' }[] = [];
 
     constructor(options: {} = {}) {

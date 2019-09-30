@@ -2,73 +2,65 @@
     "questions": [
         {
             "id": 1,
-            "title": "question 1",
-            "left": [
+            "questionTitle": "first question",
+            "quizPosition": "left",
+            "quizDescription": "<p>Who is this men???.</p><img src=/'https://upload.wikimedia.org/wikipedia/commons/1/10/%D0%92%D1%96%D0%B7%D0%B8%D1%82_%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%BE_%D1%96%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%86%D1%96%D0%B9_%D0%84%D0%A1_%D1%96_%D0%9D%D0%90%D0%A2%D0%9E_%D1%83_%D0%91%D1%80%D1%8E%D1%81%D1%81%D0%B5%D0%BB%D1%96%2C_2019%2C_16_%28cropped%29.jpg/' width=/'250/' height=/'auto/'/>",
+            "quizList": [
                 {
-                    "content": "<p>some content</p>",
-                }
-            ],
-            "right": [
-                {
-                    "fields": [
+                    "key": "question1",
+                    "label": "Seems like this is:",
+                    "required": true,
+                    "options": [
                         {
-                            "type": "input",
-                            "value": " ",
-                            "placeholder": "type here",
-                            "label": "enter response in field bellow",
-                            "params": true,
-                            "required": true
+                            "value": "v1",
+                            "label": "mr. Trump"
+                        },
+                        {
+                            "value": "v2",
+                            "label": "mr. Zelensky"
+                        },
+                        {
+                            "value": "v3",
+                            "label": "mr. Poroshenko"
+                        },
+                        {
+                            "value": "v4",
+                            "label": "mr. Putin"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": 2,
-            "title": "question 2",
-            "left": [
+            "id": 12,
+            "questionTitle": "second question",
+            "quizPosition": "right",
+            "quizDescription": "Find second president of Ukraine.",
+            "quizList": [
                 {
-                    "content": "<p>some content</p>",
-                }
-            ],
-            "right": [
-                {
-                    "fields": [
+                    "key": "question1",
+                    "label": "Seems like this is:",
+                    "required": true,
+                    "options": [
                         {
-                            "type": "input",
-                            "value": " ",
-                            "placeholder": "type here",
-                            "label": "enter response in field bellow",
-                            "params": true,
-                            "required": true
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "title": "question 3",
-            "left": [
-                {
-                    "content": "<p>some content</p>",
-                }
-            ],
-            "right": [
-                {
-                    "fields": [
+                            "value": "v1",
+                            "label": "mr. Trump"
+                        },
                         {
-                            "type": "input",
-                            "value": " ",
-                            "placeholder": "type here",
-                            "label": "enter response in field bellow",
-                            "params": true,
-                            "required": true
+                            "value": "v2",
+                            "label": "mr. Zelensky"
+                        },
+                        {
+                            "value": "v3",
+                            "label": "mr. Poroshenko"
+                        },
+                        {
+                            "value": "v4",
+                            "label": "mr. Putin"
                         }
                     ]
                 }
             ]
         }
-
     ]
 }

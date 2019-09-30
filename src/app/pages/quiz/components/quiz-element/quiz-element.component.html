@@ -1,4 +1,3 @@
-<h2>{{question.questionTitle}}</h2>
 <div class="formgroup" [formGroup]="form">
   <div [ngClass]="question.quizPosition !== 'left' ? 'left' : 'right'">
     <div class="description" [innerHtml]="question.quizDescription"></div>
@@ -6,13 +5,25 @@
   <div [ngClass]="question.quizPosition === 'left' ? 'left' : 'right'">
     <div *ngFor='let opt of question.quizList'>
       <div class="controltype" [ngSwitch]="opt.controlType">
+        <!-- radio -->
         <div class="radio-container" *ngSwitchCase="'radio'">
           <label *ngFor="let radioItem of opt.options">
             <span class="label-caption"> {{radioItem.label}}</span>
             <input [formControlName]="opt.key" [name]="opt.key" [id]="radioItem.value" [type]="opt.controlType"
-              [value]="radioItem.value">
+              [value]="radioItem.value" [ngClass]="radioItem.content? 'has-content': ''">
+            <div [innerHTML]="radioItem.content"></div>
           </label>
         </div>
+        <!-- checkbox -->
+        <div class="checkbox-container" *ngSwitchCase="'checkbox'">
+          <label *ngFor="let checkboxItem of opt.options">
+            <span class="label-caption"> {{checkboxItem.label}}</span>
+            <input [formControlName]="opt.key" [name]="opt.key" [id]="checkboxItem.value" [type]="opt.controlType"
+              [value]="checkboxItem.value" [ngClass]="checkboxItem.content? 'has-content': ''">
+            <div [innerHTML]="checkboxItem.content"></div>
+          </label>
+        </div>
+        <!-- input -->
         <div class="input-container" *ngSwitchCase="'textbox'">
           <label class="form-contoll--label" *ngSwitchCase="'textbox'">
             <span class="label-caption"></span>
