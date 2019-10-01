@@ -15,6 +15,7 @@ export class QuizTransformService {
     question.quizList.forEach(formItem => {
       group[formItem.key] = formItem.required ? new FormControl(formItem.value || '', Validators.required) : new FormControl(formItem.value || '');
     });
+    console.log(group);
     return new FormGroup(group);
   }
 

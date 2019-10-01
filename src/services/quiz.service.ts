@@ -4,8 +4,18 @@ import { environment } from '../environments/environment';
 import { QuizRadio } from '../app/models/quiz-radio-group.mode';
 import { QuizStructure } from '../app/models/quiz-structure.model';
 import { QuizCheckBox } from '../app/models/quiz-checkbox-group.model';
+import { QuizAnswers } from '../app/models/quiz-answers.model';
 
-const api = environment.apiDomain
+const api = environment.apiDomain;
+
+const answers: QuizAnswers[] = [
+// {
+//   question_id: 1,
+//   right_answer: 'test',
+
+
+// }
+]
 @Injectable({
   providedIn: 'root'
 })
@@ -76,6 +86,7 @@ export class QuizService {
 
     return questions;
   }
+  
   checkAnswer(index, status) {
 
   }
