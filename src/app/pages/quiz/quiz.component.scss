@@ -34,3 +34,9 @@ app-quiz-form {
     grid-column: 2 / 4;
     grid-row: 2;
 }
+::ng-deep {
+    app-quiz-form {
+        grid-column: 2 / 4;
+        grid-row: 2;
+    }
+}
