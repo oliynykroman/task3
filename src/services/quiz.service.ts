@@ -8,14 +8,6 @@ import { QuizAnswers } from '../app/models/quiz-answers.model';
 
 const api = environment.apiDomain;
 
-const answers: QuizAnswers[] = [
-// {
-//   question_id: 1,
-//   right_answer: 'test',
-
-
-// }
-]
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +16,7 @@ export class QuizService {
   constructor(private http: HttpClient) { }
   progress = [];
   getQuestions() {
+
     let questions: QuizStructure[] = [
       {
         id: 1,
