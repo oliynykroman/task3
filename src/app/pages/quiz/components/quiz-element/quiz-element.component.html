@@ -1,4 +1,5 @@
 <div class="formgroup" [formGroup]="form">
+  {{question}}
   <div [ngClass]="question.quizPosition !== 'left' ? 'left' : 'right'">
     <div class="description" [innerHtml]="question.quizDescription"></div>
   </div>
