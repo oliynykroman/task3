@@ -18,8 +18,9 @@
         color: lightslategrey;
         text-decoration: none;
         text-align: center;
-        &.active{
-            background-color:lightslategrey;
+
+        &.active {
+            background-color: lightslategrey;
             color: #ffffff
         }
     }
@@ -30,7 +31,14 @@ app-progress {
     grid-row: 1;
 }
 
-app-quiz-form {
+router-outlet {
     grid-column: 2 / 4;
-    grid-row: 2;
+    grid-row: 1;
+}
+
+::ng-deep {
+    app-quiz-form {
+        grid-column: 2 / 4;
+        grid-row: 2;
+    }
 }
