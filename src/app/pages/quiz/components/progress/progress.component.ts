@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { QuizAnswers } from '../../../../models/quiz-answers.model';
 
 @Component({
   selector: 'app-progress',
@@ -6,11 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./progress.component.scss']
 })
 export class ProgressComponent implements OnInit {
-  @Input() questionStatus: any[] = []
+  @Input() answers: QuizAnswers[] = [];
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
 }

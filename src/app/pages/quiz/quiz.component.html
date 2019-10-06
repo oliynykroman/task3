@@ -1,8 +1,9 @@
 <div class="grid">
     <div class="questions">
+        Question:
         <a [routerLink]="['/quiz/', i]" routerLinkActive="active" class="question-link"
-            *ngFor="let item of questions; let i = index">{{questions[i].id}}</a>
+            *ngFor="let item of answers; let i = index">{{i}}</a>
     </div>
-    <app-progress [questionStatus]></app-progress>
-    <app-quiz-form [question]="questions[id ? id : 2 ]"></app-quiz-form>
+    <app-progress [answers]="answers"></app-progress>
+    <router-outlet></router-outlet>
 </div>

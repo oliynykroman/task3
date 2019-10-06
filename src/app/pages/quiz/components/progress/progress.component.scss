@@ -1,17 +1,19 @@
 .bar {
     display: flex;
     flex-direction: row;
+    width: 100%;
 
     .question {
         height: 30px;
         text-align: center;
         background-color: gray;
         color: #ffffff;
-
+        flex: 1;
+        border: 1px solid darkgray;
+        line-height: 30px;
         &.correct {
             background-color: green
         }
-
         &.not_correct {
             background-color: darkred;
         }

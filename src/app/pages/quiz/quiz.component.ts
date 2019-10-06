@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { QuizService } from '../../../services/quiz.service'
+import { Component, OnInit, Output } from '@angular/core';
+import { QuizAnswers } from '../../models/quiz-answers.model';
+import { Subscription } from 'rxjs';
+import { QuizService } from '../../../services/quiz.service';
 import { ActivatedRoute } from '@angular/router';
 import { QuizStructure } from '../../models/quiz-structure.model';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-quiz',
@@ -11,20 +12,21 @@ import { Subscription } from 'rxjs';
 })
 export class QuizComponent implements OnInit {
 
-  public questions: QuizStructure[] = [];
-  public id: number = 0;
+  public id:number =0;
+  public answers: QuizAnswers[] = [];
+  public question:QuizStructure = new QuizStructure;
 
   private subscription: Subscription;
-  
+
   constructor(
     private quizService: QuizService,
-    private route: ActivatedRoute) {
-  }
-  ngOnInit() {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.subscription = this.quizService.getQuestions().subscribe(data => this.questions = data);
-  }
-  nextQuiz() {
+    private route: ActivatedRoute) { }
 
+  ngOnInit() {
+    this.subscription = this.quizService.getAnswers().subscribe(data => this.answers = data);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

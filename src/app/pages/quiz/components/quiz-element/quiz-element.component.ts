@@ -9,7 +9,7 @@ import { Quiz } from '../../../../models/quiz.model';
 })
 export class QuizElementComponent implements OnInit {
 
-  @Input() question: Quiz<any>;
+  @Input() question: Quiz;
   @Input() form: FormGroup;
   get isValid() { return this.form.controls[this.question.key].valid; }
 

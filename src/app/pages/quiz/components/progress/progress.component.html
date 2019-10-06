@@ -1,7 +1,6 @@
-<div class="bar" *ngIf='questionStatus'>
-    progress
-    <div class="question" *ngFor="let item of questionStatus; let i = index;"
-        [ngClass]="{'correct': questionStatus, 'not-correct':!questionStatus}">
+<div class="bar" *ngIf='answers'>
+    <div class="question" *ngFor="let item of answers; let i = index;"
+        [ngClass]="{'': item.questionStatus === 'no-answer', 'not-correct':item.questionStatus ==='correct', 'correct':item.questionStatus === 'not-correct'}">
         {{i}}
     </div>
 </div>

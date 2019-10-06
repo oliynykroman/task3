@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { QuizRadio } from '../app/models/quiz-radio-group.mode';
 import { QuizStructure } from '../app/models/quiz-structure.model';
-import { QuizCheckBox } from '../app/models/quiz-checkbox-group.model';
 import { QuizAnswers } from '../app/models/quiz-answers.model';
 
 const api = environment.apiDomain;
@@ -14,6 +12,7 @@ const api = environment.apiDomain;
 export class QuizService {
 
   constructor(private http: HttpClient) { }
+
   getQuestions() {
     return this.http.get<QuizStructure[]>(`${api}/questions`);
   }
@@ -21,7 +20,7 @@ export class QuizService {
     return this.http.get<QuizAnswers[]>(`${api}/answers`);
   }
 
-  updateAnswer(){
+  updateAnswer() {
 
   }
 }
