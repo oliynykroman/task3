@@ -16,9 +16,9 @@
         </div>
         <!-- checkbox -->
         <div class="checkbox-container" *ngSwitchCase="'checkbox'">
-          <label *ngFor="let checkboxItem of opt.options;" >
+          <label *ngFor="let checkboxItem of opt.options" >
             <span class="label-caption"> {{checkboxItem.label}}</span>
-            <input [formControlName]="opt.key" [name]="opt.key" [id]="checkboxItem.value" [type]="opt.controlType"
+            <input [formControlName]="checkboxItem.name" [name]="checkboxItem.name" [id]="checkboxItem.value" [type]="opt.controlType"
               [value]="checkboxItem.value" [ngClass]="checkboxItem.content? 'has-content': ''">
             <div [innerHTML]="checkboxItem.content"></div>
           </label>
