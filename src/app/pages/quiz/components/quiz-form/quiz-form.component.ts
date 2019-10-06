@@ -5,8 +5,6 @@ import { QuizStructure } from '../../../../models/quiz-structure.model';
 import { QuizService } from '../../../../../services/quiz.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Quiz } from '../../../../models/quiz.model';
-
 
 @Component({
   selector: 'app-quiz-form',
@@ -19,7 +17,7 @@ export class QuizFormComponent implements OnInit, OnDestroy {
   public payLoad = '';
   public id: number = 0;
   public questionsArray: QuizStructure[] = [];
-  public question:any;
+  public question: any;
 
   private subscription: Subscription;
 
@@ -27,17 +25,12 @@ export class QuizFormComponent implements OnInit, OnDestroy {
     private quizService: QuizService,
     private quizTransformService: QuizTransformService,
     private route: ActivatedRoute) {
+
   }
- 
+
   ngOnInit() {
-    this.subscription = this.quizService.getQuestions().subscribe(data => {
-      this.questionsArray = data;
-      this.route.paramMap.subscribe(linkId => {
-        this.question = this.questionsArray[+linkId.get('id')];
-        this.form = this.quizTransformService.toFormGroup(this.question);
-      }
-      );
-    });
+this.subscription = this.quizService.QuizInfo$.subscribe(data => this.id = id)
+  
   }
 
   onSubmit() {
