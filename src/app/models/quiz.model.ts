@@ -5,5 +5,5 @@ export class Quiz {
     label: string;
     required: boolean;
     controlType: string;
-    options:Controll;
+    options:Controll[];
 }

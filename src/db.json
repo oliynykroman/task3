@@ -14,25 +14,25 @@
                     "options": [
                         {
                             "value": "v1",
-                            "name": "question1",
+                            "name": "controllquestion1",
                             "label": "mr. Trump",
                             "content": ""
                         },
                         {
                             "value": "v2",
-                            "name": "question1",
+                            "name": "controllquestion1",
                             "label": "mr. Zelensky",
                             "content": ""
                         },
                         {
                             "value": "v3",
-                            "name": "question1",
+                            "name": "controllquestion1",
                             "label": "mr. Poroshenko",
                             "content": ""
                         },
                         {
                             "value": "v4",
-                            "name": "question1",
+                            "name": "controllquestion1",
                             "label": "mr. Putin",
                             "content": ""
                         }
@@ -89,12 +89,12 @@
                 {
                     "key": "question3",
                     "label": "The song is:",
-                    "required": true,
+                    "required": false,
                     "controlType": "checkbox",
                     "options": [
                         {
                             "value": "v1",
-                            "name": "questionName1",
+                            "name": "question1",
                             "label": "T. Lindemann \"Steh auf\"",
                             "content": ""
                         },
@@ -106,13 +106,13 @@
                         },
                         {
                             "value": "v3",
-                            "name": "questionName3",
+                            "name": "question3",
                             "label": "T. Lindemann \"Mathematik\"",
                             "content": ""
                         },
                         {
                             "value": "v4",
-                            "name": "questionName4",
+                            "name": "question4",
                             "label": "T. Lindemann \"Skills in pills\"",
                             "content": ""
                         }
