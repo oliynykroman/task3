@@ -17,6 +17,5 @@ export class QuizElementComponent implements OnInit {
 
   }
   ngOnInit() { 
-    console.log(this.question);
   }
 }

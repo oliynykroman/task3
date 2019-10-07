@@ -14,8 +14,11 @@ export class QuizTransformService {
   toFormGroup(question: QuizStructure) {
     let group: any = {};
     question.quizList.forEach(formItem => {
-      group[formItem.key] = formItem.required ? new FormControl(formItem.options.value || '', Validators.required) : new FormControl(formItem.options.value || '');
+      formItem.options.forEach(element => {
+        group[element.name] = formItem.required ? new FormControl(element.value || '', Validators.required) : new FormControl(element.value || '');
+      })
     });
+
     return new FormGroup(group);
   }
 

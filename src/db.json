@@ -14,25 +14,25 @@
                     "options": [
                         {
                             "value": "v1",
-                            "name": "question1",
+                            "name": "controllquestion1",
                             "label": "mr. Trump",
                             "content": ""
                         },
                         {
                             "value": "v2",
-                            "name": "question1",
+                            "name": "controllquestion1",
                             "label": "mr. Zelensky",
                             "content": ""
                         },
                         {
                             "value": "v3",
-                            "name": "question1",
+                            "name": "controllquestion1",
                             "label": "mr. Poroshenko",
                             "content": ""
                         },
                         {
                             "value": "v4",
-                            "name": "question1",
+                            "name": "controllquestion1",
                             "label": "mr. Putin",
                             "content": ""
                         }
@@ -89,7 +89,7 @@
                 {
                     "key": "question3",
                     "label": "The song is:",
-                    "required": true,
+                    "required": false,
                     "controlType": "checkbox",
                     "options": [
                         {
