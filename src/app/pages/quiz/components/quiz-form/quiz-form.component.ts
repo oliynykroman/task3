@@ -1,11 +1,10 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { QuizTransformService } from '../../../../../services/quiz-transform.service';
 import { FormGroup } from '@angular/forms';
-import { QuizStructure } from '../../../../models/quiz-structure.model';
 import { QuizService } from '../../../../../services/quiz.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Quiz } from '../../../../models/quiz.model';
+import { QuizTransformService } from '../../../../../services/quiz-transform.service';
+import { QuizStructure } from '../../../../models/quiz-structure.model';
 
 
 @Component({
@@ -19,7 +18,7 @@ export class QuizFormComponent implements OnInit, OnDestroy {
   public payLoad = '';
   public id: number = 0;
   public questionsArray: QuizStructure[] = [];
-  public question:any;
+  public question: any;
 
   private subscription: Subscription;
 
@@ -28,7 +27,7 @@ export class QuizFormComponent implements OnInit, OnDestroy {
     private quizTransformService: QuizTransformService,
     private route: ActivatedRoute) {
   }
- 
+
   ngOnInit() {
     this.subscription = this.quizService.getQuestions().subscribe(data => {
       this.questionsArray = data;
