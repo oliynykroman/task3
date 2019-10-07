@@ -1,7 +1,6 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="question">
-
   <div class="form-questions">
-    <app-quiz-element [question]="question" [form]="formFields"></app-quiz-element> 
+    <app-quiz-element [question]="question" [form]="form"></app-quiz-element> 
   </div>
 
   <div class="form">

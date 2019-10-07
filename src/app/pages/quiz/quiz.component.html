@@ -2,7 +2,7 @@
     <div class="questions">
         Question:
         <a [routerLink]="['/quiz/', i]" routerLinkActive="active" class="question-link"
-            *ngFor="let item of answers; let i = index" (click)="prepareQuiz(i)">{{i}}</a>
+            *ngFor="let item of answers; let i = index">{{i}}</a>
     </div>
     <app-progress [answers]="answers"></app-progress>
     <router-outlet></router-outlet>
