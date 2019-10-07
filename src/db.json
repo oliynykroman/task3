@@ -94,7 +94,7 @@
                     "options": [
                         {
                             "value": "v1",
-                            "name": "question3",
+                            "name": "question1",
                             "label": "T. Lindemann \"Steh auf\"",
                             "content": ""
                         },
@@ -106,13 +106,13 @@
                         },
                         {
                             "value": "v3",
-                            "name": "question2",
+                            "name": "question3",
                             "label": "T. Lindemann \"Mathematik\"",
                             "content": ""
                         },
                         {
                             "value": "v4",
-                            "name": "question2",
+                            "name": "question4",
                             "label": "T. Lindemann \"Skills in pills\"",
                             "content": ""
                         }
