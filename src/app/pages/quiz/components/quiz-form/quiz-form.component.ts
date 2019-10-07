@@ -2,9 +2,11 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { QuizTransformService } from '../../../../../services/quiz-transform.service';
 import { FormGroup } from '@angular/forms';
 import { QuizStructure } from '../../../../models/quiz-structure.model';
-import { Subscription } from 'rxjs';
+import { QuizService } from '../../../../../services/quiz.service';
 import { ActivatedRoute } from '@angular/router';
-import { QuizService } from 'src/services/quiz.service';
+import { Subscription } from 'rxjs';
+import { Quiz } from '../../../../models/quiz.model';
+
 
 @Component({
   selector: 'app-quiz-form',
@@ -13,43 +15,33 @@ import { QuizService } from 'src/services/quiz.service';
 })
 export class QuizFormComponent implements OnInit, OnDestroy {
 
-  public formFields: FormGroup;
+  public form: FormGroup;
   public payLoad = '';
   public id: number = 0;
-<<<<<<< HEAD
-  public question: QuizStructure = new QuizStructure;
-  public filteredQuestion: QuizStructure = new QuizStructure;
-=======
   public questionsArray: QuizStructure[] = [];
-  public question: any;
->>>>>>> a7b4ecb233824719eaa65105aab642bbd5a78f77
+  public question:any;
 
   private subscription: Subscription;
 
   constructor(
-    private quizTransformService: QuizTransformService,
     private quizService: QuizService,
+    private quizTransformService: QuizTransformService,
     private route: ActivatedRoute) {
-
   }
-
+ 
   ngOnInit() {
-<<<<<<< HEAD
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.subscription = this.quizService.getQuestions(this.id).subscribe(data => this.question = data);
-    this.formFields = this.quizTransformService.toFormGroup(this.question);
-  }
-
-  onSubmit() {
-    this.payLoad = JSON.stringify(this.formFields.value);
-=======
-this.subscription = this.quizService.QuizInfo$.subscribe(data => this.id = id)
-  
+    this.subscription = this.quizService.getQuestions().subscribe(data => {
+      this.questionsArray = data;
+      this.route.paramMap.subscribe(linkId => {
+        this.question = this.questionsArray[+linkId.get('id')];
+        this.form = this.quizTransformService.toFormGroup(this.question);
+      }
+      );
+    });
   }
 
   onSubmit() {
     this.payLoad = JSON.stringify(this.form.value);
->>>>>>> a7b4ecb233824719eaa65105aab642bbd5a78f77
     console.log(this.payLoad);
   }
   ngOnDestroy() {
