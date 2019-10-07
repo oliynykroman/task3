@@ -9,7 +9,6 @@
         <div class="radio-container" *ngSwitchCase="'radio'">
           <label *ngFor="let radioItem of opt.options">
             <span class="label-caption"> {{radioItem.label}}</span>
-
             <input [formControlName]="radioItem.name" [name]="radioItem.name" [id]="radioItem.value"
               [type]="opt.controlType" [value]="radioItem.value" [ngClass]="radioItem.content? 'has-content': ''">
             <div [innerHTML]="radioItem.content"></div>
@@ -17,6 +16,7 @@
         </div>
         <!-- checkbox -->
         <div class="checkbox-container" *ngSwitchCase="'checkbox'">
+
           <div *ngFor="let checkboxItem of opt.options">
             <span class="label-caption"> {{checkboxItem.label}}</span>
             <input [formControlName]="checkboxItem.name" [name]="checkboxItem.name" [type]="opt.controlType"
