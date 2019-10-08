@@ -89,7 +89,7 @@
                 {
                     "key": "question3",
                     "label": "The song is:",
-                    "required": false,
+                    "required": true,
                     "controlType": "checkbox",
                     "options": [
                         {

@@ -11,11 +11,14 @@ export class QuizElementComponent implements OnInit {
 
   @Input() question: Quiz;
   @Input() form: FormGroup;
-  get isValid() { return this.form.controls[this.question.key].valid; }
+  // get isValid() {
+  //    return this.form.controls[this.question.key].valid; 
+  // }
 
   constructor() {
 
   }
-  ngOnInit() { 
+  ngOnInit() {
+
   }
 }

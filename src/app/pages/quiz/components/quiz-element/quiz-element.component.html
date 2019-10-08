@@ -12,7 +12,7 @@
 
             <input [formControlName]="radioItem.name" [name]="radioItem.name" [id]="radioItem.value"
               [type]="opt.controlType" [value]="radioItem.value" [ngClass]="radioItem.content? 'has-content': ''">
-            <div [innerHTML]="radioItem.content"></div>
+            <div [innerHTML]="radioItem.content | keepHtml"></div>
           </label>
         </div>
         <!-- checkbox -->
@@ -21,7 +21,7 @@
             <span class="label-caption"> {{checkboxItem.label}}</span>
             <input [formControlName]="checkboxItem.name" [name]="checkboxItem.name" [type]="opt.controlType"
               [ngClass]="checkboxItem.content? 'has-content': ''">
-            <div [innerHTML]="checkboxItem.content"></div>
+            <div [innerHTML]="checkboxItem.content | keepHtml"></div>
           </div>
         </div>
         <!-- input -->

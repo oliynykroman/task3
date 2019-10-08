@@ -7,12 +7,14 @@ import { QuizElementComponent } from './components/quiz-element/quiz-element.com
 import { QuizFormComponent } from './components/quiz-form/quiz-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProgressComponent } from './components/progress/progress.component';
+import { EscapeHtmlPipe } from 'src/pipes/keep-html.pipe';
 @NgModule({
-  declarations: [QuizComponent, QuizFormComponent, QuizElementComponent, ProgressComponent,],
+  declarations: [QuizComponent, QuizFormComponent, QuizElementComponent, ProgressComponent, EscapeHtmlPipe],
   imports: [
     CommonModule,
     QuizRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ]
 })
 export class QuizModule { }
