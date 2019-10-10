@@ -89,7 +89,7 @@
                 {
                     "key": "question3",
                     "label": "The song is:",
-                    "required": true,
+                    "required": false,
                     "controlType": "checkbox",
                     "options": [
                         {
@@ -121,27 +121,31 @@
             ]
         }
     ],
-    "answers":[
+    "answers": [
         {
-            "id":0,
-            "rightAnswer":"v2",
-            "userAnswer":"",
-            "questionStatus":"no-answer"
+            "id": 0,
+            "rightAnswer": "v2",
+            "userAnswer": "",
+            "questionStatus": "no-answer"
         },
         {
-            "id":1,
-            "rightAnswer":"v2",
-            "userAnswer":"",
-            "questionStatus":"no-answer"
+            "id": 1,
+            "rightAnswer": "v2",
+            "userAnswer": "",
+            "questionStatus": "no-answer"
         },
         {
-            "id":2,
-            "rightAnswer":"v1",
-            "userAnswer":"",
-            "questionStatus":"no-answer"
+            "id": 2,
+            "rightAnswer": "v1",
+            "userAnswer": "",
+            "questionStatus": "no-answer"
         }
     ],
     "posts": [
-        { "id": 1, "title": "json-server", "author": "typicode" }
-      ]
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        }
+    ]
 }
