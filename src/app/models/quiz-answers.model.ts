@@ -1,6 +1,6 @@
 export class QuizAnswers {
     id: number;
     rightAnswer: string;
-    userAnswer:string;
+    userAnswer:any[];
     questionStatus: string;
 }

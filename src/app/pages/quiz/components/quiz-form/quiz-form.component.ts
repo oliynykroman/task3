@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { QuizTransformService } from '../../../../../services/quiz-transform.service';
 import { QuizStructure } from '../../../../models/quiz-structure.model';
+import { QuizAnswers } from '../../../../models/quiz-answers.model';
 
 
 @Component({
@@ -16,9 +17,14 @@ export class QuizFormComponent implements OnInit, OnDestroy {
 
   public form: FormGroup;
   public payLoad = '';
+  public correctAnswer = '';
+  public result: boolean = false;
   public id: number = 0;
   public questionsArray: QuizStructure[] = [];
   public question: any;
+  public answers: QuizAnswers[] = [];
+
+
 
   private subscription: Subscription;
 
@@ -32,16 +38,21 @@ export class QuizFormComponent implements OnInit, OnDestroy {
     this.subscription = this.quizService.getQuestions().subscribe(data => {
       this.questionsArray = data;
       this.route.paramMap.subscribe(linkId => {
-        this.question = this.questionsArray[+linkId.get('id')];
+        this.id = +linkId.get('id');
+        this.question = this.questionsArray[this.id];
         this.form = this.quizTransformService.toFormGroup(this.question);
       }
       );
     });
+    this.subscription = this.quizService.getAnswers().subscribe(data => {
+      this.answers = data;
+    })
   }
 
   onSubmit() {
+    this.correctAnswer = JSON.stringify(this.answers[this.id].rightAnswer[0])
     this.payLoad = JSON.stringify(this.form.value);
-    console.log(this.payLoad);
+    this.result = this.correctAnswer === this.payLoad;
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

@@ -93,25 +93,25 @@
                     "controlType": "checkbox",
                     "options": [
                         {
-                            "value": "v1",
+                            "value": "",
                             "name": "question1",
                             "label": "T. Lindemann \"Steh auf\"",
                             "content": ""
                         },
                         {
-                            "value": "v2",
+                            "value": "",
                             "name": "question2",
                             "label": "Lindemann  band \"Steh auf\"",
                             "content": ""
                         },
                         {
-                            "value": "v3",
+                            "value": "",
                             "name": "question3",
                             "label": "T. Lindemann \"Mathematik\"",
                             "content": ""
                         },
                         {
-                            "value": "v4",
+                            "value": "",
                             "name": "question4",
                             "label": "T. Lindemann \"Skills in pills\"",
                             "content": ""
@@ -124,19 +124,38 @@
     "answers": [
         {
             "id": 0,
-            "rightAnswer": "v2",
+            "rightAnswer": [
+                {
+                    "controllquestion1": "v2"
+                }
+            ],
             "userAnswer": "",
             "questionStatus": "no-answer"
         },
         {
             "id": 1,
-            "rightAnswer": "v2",
-            "userAnswer": "",
+            "rightAnswer": [
+                {
+                    "question2": "v2"
+                }
+            ],
+            "userAnswer": [
+                {
+                    "question2": "v2"
+                }
+            ],
             "questionStatus": "no-answer"
         },
         {
             "id": 2,
-            "rightAnswer": "v1",
+            "rightAnswer": [
+                {
+                    "question1": true,
+                    "question2": true,
+                    "question3": "",
+                    "question4": ""
+                }
+            ],
             "userAnswer": "",
             "questionStatus": "no-answer"
         }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ValidatorFn, ValidationErrors } from '@angular/forms';
 import { QuizStructure } from '../app/models/quiz-structure.model';
 import { Quiz } from '../app/models/quiz.model';
 
@@ -15,7 +15,7 @@ export class QuizTransformService {
     let group: any = {};
     question.quizList.forEach(formItem => {
       formItem.options.forEach(element => {
-        group[element.name] = formItem.required ? new FormControl(element.value  || '', Validators.required) : new FormControl(element.value  || '');
+        group[element.name] = formItem.required ? new FormControl(element.value || '', Validators.required) : new FormControl(element.value || '');
       })
     });
     return new FormGroup(group);

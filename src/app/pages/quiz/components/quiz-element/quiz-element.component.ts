@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ValidatorFn } from '@angular/forms';
 import { Quiz } from '../../../../models/quiz.model';
+import { Controll } from '../../../../models/control.model';
 
 @Component({
   selector: 'app-quiz-element',
@@ -10,15 +11,13 @@ import { Quiz } from '../../../../models/quiz.model';
 export class QuizElementComponent implements OnInit {
 
   @Input() question: Quiz;
+  @Input() questionFields: Controll;
   @Input() form: FormGroup;
-  // get isValid() {
-  //    return this.form.controls[this.question.key].valid; 
-  // }
 
   constructor() {
 
   }
   ngOnInit() {
-
   }
+
 }
