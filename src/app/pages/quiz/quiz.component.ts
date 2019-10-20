@@ -12,9 +12,10 @@ import { QuizStructure } from '../../models/quiz-structure.model';
 })
 export class QuizComponent implements OnInit {
 
-  public id:number =0;
+  public id: number = 0;
   public answers: QuizAnswers[] = [];
-  public question:QuizStructure = new QuizStructure;
+  public question: QuizStructure = new QuizStructure;
+  public quizProccess: boolean = false;
 
   private subscription: Subscription;
 
@@ -23,6 +24,10 @@ export class QuizComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    if (+this.route.snapshot.paramMap.get('id') >= 0) {
+      this.quizProccess = true;
+    }
     this.subscription = this.quizService.getAnswers().subscribe(data => this.answers = data);
   }
 

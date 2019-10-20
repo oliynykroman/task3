@@ -4,15 +4,16 @@
   </div>
 
   <div class="form">
-    <button type="submit" [disabled]="!form.valid || payLoad" >Submit</button>
-    <button (click)="nextQuiz()">Next</button>
+    <button type="submit" [disabled]="!form.valid || payLoad">Submit</button>
   </div>
 </form>
+
+<button (click)="nextQuiz()">Next</button>
+
 <div *ngIf="payLoad" class="answers">
   <h3>{{result? 'Coreect': 'Not correct'}}</h3>
   <div class="answers">
-    your answer : {{payLoad}}
-    correctAnswer: {{correctAnswer}}
+    <p> your answer : {{payLoad}}</p>
+    <p> correctAnswer: {{correctAnswer}}</p>
   </div>
-
 </div>

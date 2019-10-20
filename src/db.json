@@ -1,170 +1,174 @@
 {
-    "questions": [
+  "questions": [
+    {
+      "id": 0,
+      "questionTitle": "first question",
+      "quizPosition": "left",
+      "quizDescription": "<p>Who is this men???.</p><img src='https://upload.wikimedia.org/wikipedia/commons/1/10/%D0%92%D1%96%D0%B7%D0%B8%D1%82_%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%BE_%D1%96%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%86%D1%96%D0%B9_%D0%84%D0%A1_%D1%96_%D0%9D%D0%90%D0%A2%D0%9E_%D1%83_%D0%91%D1%80%D1%8E%D1%81%D1%81%D0%B5%D0%BB%D1%96%2C_2019%2C_16_%28cropped%29.jpg' width='250' height='auto'/>",
+      "quizList": [
         {
-            "id": 0,
-            "questionTitle": "first question",
-            "quizPosition": "left",
-            "quizDescription": "<p>Who is this men???.</p><img src='https://upload.wikimedia.org/wikipedia/commons/1/10/%D0%92%D1%96%D0%B7%D0%B8%D1%82_%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B4%D0%BE_%D1%96%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%86%D1%96%D0%B9_%D0%84%D0%A1_%D1%96_%D0%9D%D0%90%D0%A2%D0%9E_%D1%83_%D0%91%D1%80%D1%8E%D1%81%D1%81%D0%B5%D0%BB%D1%96%2C_2019%2C_16_%28cropped%29.jpg' width='250' height='auto'/>",
-            "quizList": [
-                {
-                    "key": "question1",
-                    "label": "Seems like this is:",
-                    "required": true,
-                    "controlType": "radio",
-                    "options": [
-                        {
-                            "value": "v1",
-                            "name": "controllquestion1",
-                            "label": "mr. Trump",
-                            "content": ""
-                        },
-                        {
-                            "value": "v2",
-                            "name": "controllquestion1",
-                            "label": "mr. Zelensky",
-                            "content": ""
-                        },
-                        {
-                            "value": "v3",
-                            "name": "controllquestion1",
-                            "label": "mr. Poroshenko",
-                            "content": ""
-                        },
-                        {
-                            "value": "v4",
-                            "name": "controllquestion1",
-                            "label": "mr. Putin",
-                            "content": ""
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 1,
-            "questionTitle": "second question",
-            "quizPosition": "right",
-            "quizDescription": "<p>Find second president of Ukraine.</p>",
-            "quizList": [
-                {
-                    "key": "question2",
-                    "label": "Select photo bellow:",
-                    "required": true,
-                    "controlType": "radio",
-                    "options": [
-                        {
-                            "value": "v1",
-                            "name": "question2",
-                            "label": "L. Kravchuk",
-                            "content": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Leonid_Kravchuk_2013-06-18.JPG/800px-Leonid_Kravchuk_2013-06-18.JPG\" width=\"200\" height=\"auto\" />"
-                        },
-                        {
-                            "value": "v2",
-                            "name": "question2",
-                            "label": "L. Kuchma",
-                            "content": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/92/Leonid_Kuchma.jpg\" width=\"200\" height=\"auto\" />"
-                        },
-                        {
-                            "value": "v3",
-                            "name": "question2",
-                            "label": "V. Yanukovich",
-                            "content": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f6/Viktor_Yanukovych_27_April_2010-1.jpeg?uselang=ru\" width=\"200\" height=\"auto\" />"
-                        },
-                        {
-                            "value": "v4",
-                            "name": "question2",
-                            "label": "P. Poroshenko",
-                            "content": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Official_portrait_of_Petro_Poroshenko.jpg/800px-Official_portrait_of_Petro_Poroshenko.jpg\" width=\"200\" height=\"auto\" />"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "questionTitle": "thirdt question",
-            "quizPosition": "left",
-            "quizDescription": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hiOjK992bPU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
-            "quizList": [
-                {
-                    "key": "question3",
-                    "label": "The song is:",
-                    "required": false,
-                    "controlType": "checkbox",
-                    "options": [
-                        {
-                            "value": "",
-                            "name": "question1",
-                            "label": "T. Lindemann \"Steh auf\"",
-                            "content": ""
-                        },
-                        {
-                            "value": "",
-                            "name": "question2",
-                            "label": "Lindemann  band \"Steh auf\"",
-                            "content": ""
-                        },
-                        {
-                            "value": "",
-                            "name": "question3",
-                            "label": "T. Lindemann \"Mathematik\"",
-                            "content": ""
-                        },
-                        {
-                            "value": "",
-                            "name": "question4",
-                            "label": "T. Lindemann \"Skills in pills\"",
-                            "content": ""
-                        }
-                    ]
-                }
-            ]
+          "key": "question1",
+          "label": "Seems like this is:",
+          "required": true,
+          "controlType": "radio",
+          "options": [
+            {
+              "value": "v1",
+              "name": "controllquestion1",
+              "label": "mr. Trump",
+              "content": ""
+            },
+            {
+              "value": "v2",
+              "name": "controllquestion1",
+              "label": "mr. Zelensky",
+              "content": ""
+            },
+            {
+              "value": "v3",
+              "name": "controllquestion1",
+              "label": "mr. Poroshenko",
+              "content": ""
+            },
+            {
+              "value": "v4",
+              "name": "controllquestion1",
+              "label": "mr. Putin",
+              "content": ""
+            }
+          ]
         }
-    ],
-    "answers": [
+      ]
+    },
+    {
+      "id": 1,
+      "questionTitle": "second question",
+      "quizPosition": "right",
+      "quizDescription": "<p>Find second president of Ukraine.</p>",
+      "quizList": [
         {
-            "id": 0,
-            "rightAnswer": [
-                {
-                    "controllquestion1": "v2"
-                }
-            ],
-            "userAnswer": "",
-            "questionStatus": "no-answer"
-        },
-        {
-            "id": 1,
-            "rightAnswer": [
-                {
-                    "question2": "v2"
-                }
-            ],
-            "userAnswer": [
-                {
-                    "question2": "v2"
-                }
-            ],
-            "questionStatus": "no-answer"
-        },
-        {
-            "id": 2,
-            "rightAnswer": [
-                {
-                    "question1": true,
-                    "question2": true,
-                    "question3": "",
-                    "question4": ""
-                }
-            ],
-            "userAnswer": "",
-            "questionStatus": "no-answer"
+          "key": "question2",
+          "label": "Select photo bellow:",
+          "required": true,
+          "controlType": "radio",
+          "options": [
+            {
+              "value": "v1",
+              "name": "question2",
+              "label": "L. Kravchuk",
+              "content": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Leonid_Kravchuk_2013-06-18.JPG/800px-Leonid_Kravchuk_2013-06-18.JPG\" width=\"200\" height=\"auto\" />"
+            },
+            {
+              "value": "v2",
+              "name": "question2",
+              "label": "L. Kuchma",
+              "content": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/9/92/Leonid_Kuchma.jpg\" width=\"200\" height=\"auto\" />"
+            },
+            {
+              "value": "v3",
+              "name": "question2",
+              "label": "V. Yanukovich",
+              "content": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f6/Viktor_Yanukovych_27_April_2010-1.jpeg?uselang=ru\" width=\"200\" height=\"auto\" />"
+            },
+            {
+              "value": "v4",
+              "name": "question2",
+              "label": "P. Poroshenko",
+              "content": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Official_portrait_of_Petro_Poroshenko.jpg/800px-Official_portrait_of_Petro_Poroshenko.jpg\" width=\"200\" height=\"auto\" />"
+            }
+          ]
         }
-    ],
-    "posts": [
+      ]
+    },
+    {
+      "id": 2,
+      "questionTitle": "thirdt question",
+      "quizPosition": "left",
+      "quizDescription": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hiOjK992bPU\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "quizList": [
         {
-            "id": 1,
-            "title": "json-server",
-            "author": "typicode"
+          "key": "question3",
+          "label": "The song is:",
+          "required": false,
+          "controlType": "checkbox",
+          "options": [
+            {
+              "value": "",
+              "name": "question1",
+              "label": "T. Lindemann \"Steh auf\"",
+              "content": ""
+            },
+            {
+              "value": "",
+              "name": "question2",
+              "label": "Lindemann  band \"Steh auf\"",
+              "content": ""
+            },
+            {
+              "value": "",
+              "name": "question3",
+              "label": "T. Lindemann \"Mathematik\"",
+              "content": ""
+            },
+            {
+              "value": "",
+              "name": "question4",
+              "label": "T. Lindemann \"Skills in pills\"",
+              "content": ""
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ],
+  "answers": [
+    {
+      "id": 0,
+      "rightAnswer": [
+        {
+          "controllquestion1": "v2"
+        }
+      ],
+      "userAnswer": [
+        {
+          "controllquestion1": "v2"
+        }
+      ],
+      "questionStatus": "correct"
+    },
+    {
+      "id": 1,
+      "rightAnswer": [
+        {
+          "question2": "v2"
+        }
+      ],
+      "userAnswer": [
+        {
+          "question2": "v2"
+        }
+      ],
+      "questionStatus": "correct"
+    },
+    {
+      "id": 2,
+      "rightAnswer": [
+        {
+          "question1": true,
+          "question2": true,
+          "question3": "",
+          "question4": ""
+        }
+      ],
+      "userAnswer": [
+        {
+          "question1": true,
+          "question2": true,
+          "question3": "",
+          "question4": ""
+        }
+      ],
+      "questionStatus": "correct"
+    }
+  ]
 }

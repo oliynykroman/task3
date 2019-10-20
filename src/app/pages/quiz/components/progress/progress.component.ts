@@ -10,14 +10,17 @@ import { QuizService } from '../../../../../services/quiz.service';
 })
 export class ProgressComponent implements OnInit, OnDestroy {
   @Input() answers: QuizAnswers[] = [];
+
   subscription: Subscription;
   constructor(private quizService: QuizService) { }
 
   ngOnInit() {
-    this.subscription = this.quizService.getMessage().subscribe(message => {
+    this.subscription = this.quizService.getResult().subscribe(message => {
       this.answers = message;
+      console.log(message);
     });
   }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

@@ -1,11 +1,12 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { QuizService } from '../../../../../services/quiz.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { QuizTransformService } from '../../../../../services/quiz-transform.service';
 import { QuizStructure } from '../../../../models/quiz-structure.model';
 import { QuizAnswers } from '../../../../models/quiz-answers.model';
+import { TouchSequence } from 'selenium-webdriver';
 
 
 @Component({
@@ -31,7 +32,8 @@ export class QuizFormComponent implements OnInit, OnDestroy {
   constructor(
     private quizService: QuizService,
     private quizTransformService: QuizTransformService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -50,9 +52,24 @@ export class QuizFormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
+    console.log('cdscds');
     this.correctAnswer = JSON.stringify(this.answers[this.id].rightAnswer[0])
     this.payLoad = JSON.stringify(this.form.value);
     this.result = this.correctAnswer === this.payLoad;
+    this.answers[this.id].questionStatus = this.result ? 'correct' : 'not_correct';
+    this.quizService.updateAnswer(this.id, { 'questionStatus': this.result ? 'correct' : 'not_correct', 'userAnswer': [this.form.value] }, this.answers).subscribe(
+      success => {
+        alert(`Answer saved :)`);
+      },
+      error => alert(`Oooops something wrong. Please try again later`)
+    )
+  }
+  nextQuiz() {
+    console.log('cdscds');
+    this.form.reset();
+    this.payLoad = '';
+    const pageId = this.id < this.answers.length ? this.id++ : this.answers.length - 1;
+    this.router.navigate(['/quiz/' + pageId]);
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

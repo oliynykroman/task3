@@ -1,6 +1,6 @@
 <div class="bar" *ngIf='answers'>
     <div class="question" *ngFor="let item of answers; let i = index;"
-        [ngClass]="{'': item.questionStatus === 'no-answer', 'not-correct':item.questionStatus ==='correct', 'correct':item.questionStatus === 'not-correct'}">
+        [ngClass]="{'': item.questionStatus === 'no-answer', 'not_correct':item.questionStatus ==='not_correct', 'correct':item.questionStatus === 'correct'}">
         {{i}}
     </div>
 </div>

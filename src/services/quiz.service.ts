@@ -22,17 +22,12 @@ export class QuizService {
   getAnswers() {
     return this.http.get<QuizAnswers[]>(`${api}/answers`);
   }
-
-  
-  sendMessage(message: string) {
-    this.subject.next({ text: message });
-  }
-
-  getMessage(): Observable<any> {
+  getResult(): Observable<any> {
     return this.subject.asObservable();
   }
 
-  updateAnswer() {
-
+  updateAnswer(id, status, updatedArray?) {
+    this.subject.next(updatedArray);
+    return this.http.patch<QuizAnswers>(`${api}/answers/${id}`, status);
   }
 }
