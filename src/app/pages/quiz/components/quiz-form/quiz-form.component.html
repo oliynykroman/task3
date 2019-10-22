@@ -3,11 +3,12 @@
     <app-quiz-element [question]="question" [form]="form"></app-quiz-element>
   </div>
 
+
+</form>
+
   <div class="form">
     <button type="submit" [disabled]="!form.valid || payLoad">Submit</button>
   </div>
-</form>
-
 <button (click)="nextQuiz()">Next</button>
 
 <div *ngIf="payLoad" class="answers">

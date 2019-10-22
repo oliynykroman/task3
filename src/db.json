@@ -145,10 +145,10 @@
       ],
       "userAnswer": [
         {
-          "question2": "v1"
+          "question2": "v2"
         }
       ],
-      "questionStatus": "not_correct"
+      "questionStatus": "correct"
     },
     {
       "id": 2,

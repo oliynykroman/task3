@@ -1,10 +1,10 @@
 <div class="grid">
-    <div class="quizPre" *ngIf="!quizProccess">
+    <div class="quizPre" *ngIf="quizProccess">
         <h2>In this quiz you can check how good you know Ukrainian politics</h2>  
-        <a [routerLink]="'/quiz/1'" (click)="quizProccess = !quizProccess">Start quiz</a>
+        <a [routerLink]="'/quiz/1'" (click)="toogleSomethig()">Start quiz</a>
     </div>
     
-    <div class="questions" *ngIf="quizProccess">
+    <div class="questions" *ngIf="!quizProccess">
         Question:
         <a [routerLink]="['/quiz/', i]" routerLinkActive="active" class="question-link"
             *ngFor="let item of answers; let i = index">{{i}}</a>

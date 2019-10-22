@@ -15,7 +15,7 @@ export class QuizComponent implements OnInit {
   public id: number = 0;
   public answers: QuizAnswers[] = [];
   public question: QuizStructure = new QuizStructure;
-  public quizProccess: boolean = false;
+  public quizProccess: boolean = true;
 
   private subscription: Subscription;
 
@@ -34,4 +34,10 @@ export class QuizComponent implements OnInit {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+  toogleSomethig() {
+    debugger;
+    this.quizProccess = !this.quizProccess;
+    return true;
+  }
+
 }

@@ -25,8 +25,6 @@ export class QuizFormComponent implements OnInit, OnDestroy {
   public question: any;
   public answers: QuizAnswers[] = [];
 
-
-
   private subscription: Subscription;
 
   constructor(
@@ -37,10 +35,10 @@ export class QuizFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscription = this.quizService.getQuestions().subscribe(data => {
+    this.subscription = this.quizService.getQuestions().pipe().subscribe(data => {
       this.questionsArray = data;
-      this.route.paramMap.subscribe(linkId => {
-        this.id = +linkId.get('id');
+      this.route.paramMap.subscribe(params => {
+        this.id = +params.get('id');
         this.question = this.questionsArray[this.id];
         this.form = this.quizTransformService.toFormGroup(this.question);
       }
