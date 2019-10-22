@@ -88,32 +88,32 @@
       "quizList": [
         {
           "key": "question3",
-          "label": "The song is:",
+          "label": "Choose revolutions from video:",
           "required": false,
           "controlType": "checkbox",
           "options": [
             {
               "value": "",
               "name": "question1",
-              "label": "T. Lindemann \"Steh auf\"",
+              "label": "2004 Orange revolution",
               "content": ""
             },
             {
               "value": "",
               "name": "question2",
-              "label": "Lindemann  band \"Steh auf\"",
+              "label": "2014 revolution of dignity",
               "content": ""
             },
             {
               "value": "",
               "name": "question3",
-              "label": "T. Lindemann \"Mathematik\"",
+              "label": "2019 Ze revolution",
               "content": ""
             },
             {
               "value": "",
               "name": "question4",
-              "label": "T. Lindemann \"Skills in pills\"",
+              "label": "2020 Revolution of ukrainians",
               "content": ""
             }
           ]
