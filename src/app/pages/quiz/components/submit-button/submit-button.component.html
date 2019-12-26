@@ -1,3 +1,3 @@
 <button [disabled]="disabled" (click)="submitClick()">Submit</button>
 
-<button (click)="nextQuizClick()">Next</button>
+<button *ngIf="showNext" (click)="nextQuizClick()">Next</button>

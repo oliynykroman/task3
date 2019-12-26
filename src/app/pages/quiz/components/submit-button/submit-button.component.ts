@@ -9,6 +9,7 @@ export class SubmitButtonComponent implements OnInit {
 
   @Input() disabled: boolean = false;
   @Input() title: string = 'Submit form';
+  @Input() showNext: boolean = true;
 
   @Output() submitForm: EventEmitter<any> = new EventEmitter();
   @Output() nextItem: EventEmitter<any> = new EventEmitter();

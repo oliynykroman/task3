@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { QuizAnswers } from '../../models/quiz-answers.model';
 import { Subscription } from 'rxjs';
 import { QuizService } from '../../../services/quiz.service';
@@ -15,7 +15,7 @@ export class QuizComponent implements OnInit {
   public id: number = 0;
   public answers: QuizAnswers[] = [];
   public question: QuizStructure = new QuizStructure;
-  public quizProccess: boolean = true;
+  quizProccess: boolean = true;
 
   private subscription: Subscription;
 
@@ -24,9 +24,8 @@ export class QuizComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-
     if (+this.route.snapshot.paramMap.get('id') >= 0) {
-      this.quizProccess = true;
+      this.quizProccess = false;
     }
     this.subscription = this.quizService.getAnswers().subscribe(data => this.answers = data);
   }

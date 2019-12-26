@@ -26,6 +26,7 @@ export class QuizFormComponent implements OnInit, OnDestroy {
   public answers: QuizAnswers[] = [];
   public pageId: number = 0;
   public nextPage: number = 0;
+  public showNextButton: boolean = true;
 
   private subscription: Subscription;
 
@@ -69,8 +70,10 @@ export class QuizFormComponent implements OnInit, OnDestroy {
     if (this.id < this.answers.length - 1) {
       this.id++;
       this.nextPage = this.id;
+      this.showNextButton = true;
     } else {
       this.nextPage = this.answers.length - 1;
+      this.showNextButton = false;
     }
 
     this.router.navigate(['/quiz/' + this.nextPage]);

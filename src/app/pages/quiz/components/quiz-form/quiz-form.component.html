@@ -7,16 +7,17 @@
   <app-submit-button 
     [disabled]="!form.valid || payLoad" 
     [title]="'Submit'" 
+    [showNext]="showNextButton" 
     (submitForm)="onSubmit($event)"
     (nextItem)="nextQuiz($event)">
   </app-submit-button>
 
-<div *ngIf="payLoad" class="answers">
-  <h3>{{result? 'Coreect': 'Not correct'}}</h3>
-  <div class="answers">
-    <p> your answer : {{payLoad}}</p>
-    <p> correctAnswer: {{correctAnswer}}</p>
+  <div *ngIf="payLoad" class="answers">
+    <h3>{{result? 'Coreect': 'Not correct'}}</h3>
+    <div class="answers">
+      <p> your answer : {{payLoad}}</p>
+      <p> correctAnswer: {{correctAnswer}}</p>
+    </div>
   </div>
-</div>
 
-</ng-container> 
+</ng-container>
