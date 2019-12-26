@@ -24,6 +24,8 @@ export class QuizFormComponent implements OnInit, OnDestroy {
   public questionsArray: QuizStructure[] = [];
   public question: any;
   public answers: QuizAnswers[] = [];
+  public pageId: number = 0;
+  public nextPage: number = 0;
 
   private subscription: Subscription;
 
@@ -50,7 +52,6 @@ export class QuizFormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    console.log('cdscds');
     this.correctAnswer = JSON.stringify(this.answers[this.id].rightAnswer[0])
     this.payLoad = JSON.stringify(this.form.value);
     this.result = this.correctAnswer === this.payLoad;
@@ -63,14 +64,18 @@ export class QuizFormComponent implements OnInit, OnDestroy {
     )
   }
   nextQuiz() {
-    console.log('cdscds');
     this.form.reset();
     this.payLoad = '';
-    const pageId = this.id < this.answers.length ? this.id++ : this.answers.length - 1;
-    this.router.navigate(['/quiz/' + pageId]);
+    if (this.id < this.answers.length - 1) {
+      this.id++;
+      this.nextPage = this.id;
+    } else {
+      this.nextPage = this.answers.length - 1;
+    }
+
+    this.router.navigate(['/quiz/' + this.nextPage]);
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
 }

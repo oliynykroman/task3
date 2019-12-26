@@ -1,15 +1,15 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="question">
-  <div class="form-questions">
-    <app-quiz-element [question]="question" [form]="form"></app-quiz-element>
-  </div>
-
-
-</form>
-
-  <div class="form">
-    <button type="submit" [disabled]="!form.valid || payLoad">Submit</button>
-  </div>
-<button (click)="nextQuiz()">Next</button>
+<ng-container *ngIf="question">
+  <form [formGroup]="form">
+    <div class="form-questions">
+      <app-quiz-element [question]="question" [form]="form"></app-quiz-element>
+    </div>
+  </form>
+  <app-submit-button 
+    [disabled]="!form.valid || payLoad" 
+    [title]="'Submit'" 
+    (submitForm)="onSubmit($event)"
+    (nextItem)="nextQuiz($event)">
+  </app-submit-button>
 
 <div *ngIf="payLoad" class="answers">
   <h3>{{result? 'Coreect': 'Not correct'}}</h3>
@@ -18,3 +18,5 @@
     <p> correctAnswer: {{correctAnswer}}</p>
   </div>
 </div>
+
+</ng-container> 

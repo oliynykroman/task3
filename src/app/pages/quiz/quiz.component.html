@@ -1,14 +1,14 @@
 <div class="grid">
     <div class="quizPre" *ngIf="quizProccess">
-        <h2>In this quiz you can check how good you know Ukrainian politics</h2>  
-        <a [routerLink]="'/quiz/1'" (click)="toogleSomethig()">Start quiz</a>
+        <h2>In this quiz you can check how good you know Ukrainian politics</h2>
+        <a [routerLink]="'/quiz/0'" (click)="toogleSomethig()">Start quiz</a>
     </div>
-    
+
     <div class="questions" *ngIf="!quizProccess">
         Question:
         <a [routerLink]="['/quiz/', i]" routerLinkActive="active" class="question-link"
             *ngFor="let item of answers; let i = index">{{i}}</a>
     </div>
-    <app-progress [answers]="answers" *ngIf="quizProccess"></app-progress>
+    <app-progress [answers]="answers" *ngIf="!quizProccess"></app-progress>
     <router-outlet></router-outlet>
 </div>

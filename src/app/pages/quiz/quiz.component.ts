@@ -35,7 +35,6 @@ export class QuizComponent implements OnInit {
     this.subscription.unsubscribe();
   }
   toogleSomethig() {
-    debugger;
     this.quizProccess = !this.quizProccess;
     return true;
   }

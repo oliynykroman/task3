@@ -8,8 +8,9 @@ import { QuizFormComponent } from './components/quiz-form/quiz-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProgressComponent } from './components/progress/progress.component';
 import { EscapeHtmlPipe } from 'src/pipes/keep-html.pipe';
+import { SubmitButtonComponent } from './components/submit-button/submit-button.component';
 @NgModule({
-  declarations: [QuizComponent, QuizFormComponent, QuizElementComponent, ProgressComponent, EscapeHtmlPipe],
+  declarations: [QuizComponent, QuizFormComponent, QuizElementComponent, ProgressComponent, EscapeHtmlPipe, SubmitButtonComponent],
   imports: [
     CommonModule,
     QuizRoutingModule,
