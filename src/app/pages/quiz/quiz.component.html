@@ -1,4 +1,4 @@
-<div class="grid">
+<div class="grid" *ngIf="!loadQuizError">
     <div class="quizPre" *ngIf="quizProccess">
         <h2>In this quiz you can check how good you know Ukrainian politics</h2>
         <a [routerLink]="'/quiz/0'" (click)="toogleSomethig()">Start quiz</a>
@@ -11,4 +11,7 @@
     </div>
     <app-progress [answers]="answers" *ngIf="!quizProccess"></app-progress>
     <router-outlet></router-outlet>
+</div>
+<div class="load error" *ngIf="loadQuizError">
+    <h1>Cannot load your quiz</h1>
 </div>
