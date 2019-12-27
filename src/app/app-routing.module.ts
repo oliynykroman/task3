@@ -13,7 +13,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/quiz', pathMatch: 'full'
+    redirectTo: '/quiz', 
+    pathMatch: 'full'
   },
   {
     path: '**',

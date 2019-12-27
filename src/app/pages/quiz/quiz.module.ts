@@ -9,8 +9,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProgressComponent } from './components/progress/progress.component';
 import { EscapeHtmlPipe } from 'src/pipes/keep-html.pipe';
 import { SubmitButtonComponent } from './components/submit-button/submit-button.component';
+import { TotalComponent } from './components/total/total.component';
 @NgModule({
-  declarations: [QuizComponent, QuizFormComponent, QuizElementComponent, ProgressComponent, EscapeHtmlPipe, SubmitButtonComponent],
+  declarations: [QuizComponent, QuizFormComponent, QuizElementComponent, ProgressComponent, EscapeHtmlPipe, SubmitButtonComponent, TotalComponent],
   imports: [
     CommonModule,
     QuizRoutingModule,

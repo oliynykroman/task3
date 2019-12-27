@@ -15,8 +15,8 @@ export class QuizComponent implements OnInit {
   public id: number = 0;
   public answers: QuizAnswers[] = [];
   public question: QuizStructure = new QuizStructure;
-  public loadQuizError: boolean = true;
-  quizProccess: boolean = true;
+  public loadQuizError: boolean = false;
+  startQuiz: boolean = true;
 
   private subscription: Subscription;
 
@@ -26,25 +26,25 @@ export class QuizComponent implements OnInit {
 
   ngOnInit() {
     if (+this.route.snapshot.paramMap.get('id') >= 0) {
-      this.quizProccess = false;
+      this.startQuiz = false;
     }
-    this.subscription = this.quizService.getAnswers().subscribe(
-      data => {
-        this.answers = data;
-        this.loadQuizError = false;
-        this.quizProccess = true;
-      },
-      error => {
-        this.loadQuizError = true;
-        this.quizProccess = false;
-      }
-    );
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-  toogleSomethig() {
-    this.quizProccess = !this.quizProccess;
-    return true;
+
+  loadQuiz() {
+    this.subscription = this.quizService.getAnswers().subscribe(
+      data => {
+        this.answers = data;
+      },
+      error => {
+        this.loadQuizError = true;
+      }
+    );
+  }
+  startQuizButton() {
+    this.startQuiz = !this.startQuiz;
+    this.loadQuiz();
   }
 }

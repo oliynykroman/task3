@@ -1,15 +1,15 @@
 <div class="grid" *ngIf="!loadQuizError">
-    <div class="quizPre" *ngIf="quizProccess">
+    <div class="quizPre" *ngIf="startQuiz">
         <h2>In this quiz you can check how good you know Ukrainian politics</h2>
-        <a [routerLink]="'/quiz/0'" (click)="toogleSomethig()">Start quiz</a>
+        <a [routerLink]="'/quiz/0'" (click)="startQuizButton()">Start quiz</a>
     </div>
 
-    <div class="questions" *ngIf="!quizProccess">
+    <div class="questions" *ngIf="!startQuiz">
         Question:
         <a [routerLink]="['/quiz/', i]" routerLinkActive="active" class="question-link"
             *ngFor="let item of answers; let i = index">{{i}}</a>
     </div>
-    <app-progress [answers]="answers" *ngIf="!quizProccess"></app-progress>
+    <app-progress [answers]="answers" *ngIf="!startQuiz"></app-progress>
     <router-outlet></router-outlet>
 </div>
 <div class="load error" *ngIf="loadQuizError">
